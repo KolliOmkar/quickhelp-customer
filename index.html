@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+l<!DOCTYPE html>
 <html>
 <head>
 <title>VEYRO</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+
 body{
 margin:0;
 font-family:Arial;
@@ -13,10 +14,10 @@ background:#f4f7ff;
 
 .header{
 background:#1565ff;
-color:white;
 padding:25px;
 text-align:center;
-font-size:32px;
+color:white;
+font-size:34px;
 font-weight:bold;
 }
 
@@ -28,17 +29,17 @@ text-align:center;
 .card{
 background:white;
 padding:20px;
-margin-top:20px;
 border-radius:20px;
+margin-top:20px;
 box-shadow:0 2px 10px rgba(0,0,0,0.1);
 }
 
 input{
 width:90%;
 padding:15px;
-margin-top:15px;
-border-radius:10px;
+border-radius:12px;
 border:1px solid #ccc;
+margin-top:15px;
 font-size:16px;
 }
 
@@ -46,19 +47,19 @@ button{
 background:#1565ff;
 color:white;
 border:none;
-padding:15px 25px;
+padding:15px;
+width:95%;
 border-radius:12px;
 font-size:16px;
 margin-top:20px;
-width:95%;
 }
 
 .service{
 background:#1565ff;
 color:white;
 padding:20px;
-margin-top:15px;
 border-radius:15px;
+margin-top:15px;
 font-size:22px;
 }
 
@@ -78,9 +79,16 @@ textarea{
 width:90%;
 height:100px;
 padding:10px;
-margin-top:15px;
 border-radius:10px;
 border:1px solid #ccc;
+margin-top:15px;
+}
+
+.footer{
+margin-top:40px;
+padding:20px;
+font-size:14px;
+color:#666;
 }
 
 </style>
@@ -100,7 +108,9 @@ VEYRO
 
 <p>Home Services In Minutes</p>
 
-<input type="tel" placeholder="Enter Mobile Number" maxlength="10">
+<input type="tel"
+maxlength="10"
+placeholder="Enter Mobile Number">
 
 <button onclick="login()">
 Login with OTP
@@ -119,19 +129,23 @@ Login with OTP
 
 <h2>Select Service</h2>
 
-<div class="service" onclick="selectService('Plumber')">
+<div class="service"
+onclick="selectService('Plumber')">
 🧑‍🔧 Plumber
 </div>
 
-<div class="service" onclick="selectService('Painter')">
+<div class="service"
+onclick="selectService('Painter')">
 🎨 Painter
 </div>
 
-<div class="service" onclick="selectService('Electrician')">
+<div class="service"
+onclick="selectService('Electrician')">
 ⚡ Electrician
 </div>
 
-<div class="service" onclick="selectService('Cleaning')">
+<div class="service"
+onclick="selectService('Cleaning')">
 🧹 Cleaning
 </div>
 
@@ -143,7 +157,8 @@ Login with OTP
 
 <h2>Select Location</h2>
 
-<input type="text" placeholder="Enter Address">
+<input type="text"
+placeholder="Enter Address">
 
 <button onclick="showPrice()">
 Continue
@@ -159,23 +174,44 @@ Continue
 
 <p>Service Charge</p>
 
-<button onclick="completeBooking()">
+<button onclick="confirmBooking()">
 Confirm Booking
+</button>
+
+</div>
+
+<div class="card hide" id="statusPage">
+
+<h2>Booking Confirmed ✅</h2>
+
+<p>Worker will arrive soon</p>
+
+<div class="service">
+🚴 Worker Assigned
+</div>
+
+<button onclick="completeService()">
+Complete Service
+</button>
+
+<button
+onclick="cancelBooking()"
+style="background:red;">
+Cancel Booking
 </button>
 
 </div>
 
 <div class="card hide" id="ratingPage">
 
-<h2>Service Completed ✅</h2>
-
-<p>Rate Your Experience</p>
+<h2>Rate Service</h2>
 
 <div style="font-size:40px;">
 ⭐ ⭐ ⭐ ⭐ ⭐
 </div>
 
-<textarea placeholder="Write Feedback"></textarea>
+<textarea
+placeholder="Write Feedback"></textarea>
 
 <button>
 Submit Review
@@ -183,45 +219,100 @@ Submit Review
 
 </div>
 
+<div class="footer">
+© 2025 VEYRO <br>
+Home Services In Minutes
+</div>
+
 </div>
 
 <script>
 
-let selectedService = "";
+let selectedService="";
 
 function login(){
 
-document.getElementById("loginPage").style.display="none";
+document.getElementById(
+"loginPage"
+).style.display="none";
 
-document.getElementById("homePage").style.display="block";
+document.getElementById(
+"homePage"
+).style.display="block";
 
 }
 
 function selectService(service){
 
-selectedService = service;
+selectedService=service;
 
-document.getElementById("homePage").style.display="none";
+document.getElementById(
+"homePage"
+).style.display="none";
 
-document.getElementById("locationPage").style.display="block";
+document.getElementById(
+"locationPage"
+).style.display="block";
 
 }
 
 function showPrice(){
 
-document.getElementById("locationPage").style.display="none";
+document.getElementById(
+"locationPage"
+).style.display="none";
 
-document.getElementById("pricePage").style.display="block";
+document.getElementById(
+"pricePage"
+).style.display="block";
 
-document.getElementById("serviceName").innerHTML=selectedService;
+document.getElementById(
+"serviceName"
+).innerHTML=selectedService;
 
 }
 
-function completeBooking(){
+function confirmBooking(){
 
-document.getElementById("pricePage").style.display="none";
+document.getElementById(
+"pricePage"
+).style.display="none";
 
-document.getElementById("ratingPage").style.display="block";
+document.getElementById(
+"statusPage"
+).style.display="block";
+
+}
+
+function completeService(){
+
+document.getElementById(
+"statusPage"
+).style.display="none";
+
+document.getElementById(
+"ratingPage"
+).style.display="block";
+
+}
+
+function cancelBooking(){
+
+let reason = prompt(
+"Reason for cancellation?"
+);
+
+alert(
+"Booking Cancelled\nReason: " + reason
+);
+
+document.getElementById(
+"statusPage"
+).style.display="none";
+
+document.getElementById(
+"homePage"
+).style.display="block";
 
 }
 
@@ -229,7 +320,7 @@ document.getElementById("ratingPage").style.display="block";
 
 </body>
 </html>
-<div class="footer">
+<div class="footercenter">
 VEYRO © 2026
 </div>
 
