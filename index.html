@@ -2,8 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
 <title>VEYRO</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -11,169 +15,308 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial;
+font-family:'Poppins',sans-serif;
 }
 
 body{
-background:#f4f7fb;
+background:#f3f7ff;
+overflow-x:hidden;
 }
 
-.header{
-background:linear-gradient(135deg,#0057ff,#00a2ff);
-padding:30px 20px;
+/* SPLASH SCREEN */
+
+#splash{
+position:fixed;
+width:100%;
+height:100vh;
+background:linear-gradient(135deg,#001b44,#005eff,#00b3ff);
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+z-index:9999;
 color:white;
-text-align:center;
-border-bottom-left-radius:30px;
-border-bottom-right-radius:30px;
-box-shadow:0 4px 20px rgba(0,0,0,0.15);
+animation:hideSplash 1s forwards;
+animation-delay:2.5s;
+}
+
+@keyframes hideSplash{
+to{
+opacity:0;
+visibility:hidden;
+}
 }
 
 .logo{
-font-size:38px;
-font-weight:bold;
-letter-spacing:2px;
+font-size:52px;
+font-weight:700;
+letter-spacing:5px;
+animation:zoom 1.5s infinite alternate;
+}
+
+@keyframes zoom{
+from{
+transform:scale(1);
+}
+to{
+transform:scale(1.08);
+}
 }
 
 .tagline{
-margin-top:8px;
-font-size:16px;
+margin-top:10px;
+font-size:18px;
 opacity:0.9;
 }
 
+.loading{
+margin-top:25px;
+font-size:15px;
+opacity:0.8;
+}
+
+/* MAIN */
+
 .container{
-padding:20px;
 max-width:500px;
 margin:auto;
+padding:20px;
+}
+
+.header{
+background:linear-gradient(135deg,#005eff,#00b3ff);
+padding:35px 25px;
+border-bottom-left-radius:35px;
+border-bottom-right-radius:35px;
+color:white;
+box-shadow:0 6px 25px rgba(0,0,0,0.15);
+}
+
+.header h1{
+font-size:34px;
+font-weight:700;
+}
+
+.header p{
+margin-top:8px;
+opacity:0.9;
 }
 
 .card{
 background:white;
 padding:25px;
-border-radius:24px;
-margin-top:20px;
-box-shadow:0 5px 20px rgba(0,0,0,0.08);
+border-radius:28px;
+margin-top:25px;
+box-shadow:0 6px 20px rgba(0,0,0,0.08);
 }
 
 .title{
-font-size:26px;
-font-weight:bold;
-margin-bottom:10px;
+font-size:28px;
+font-weight:600;
 text-align:center;
+margin-bottom:8px;
 }
 
 .subtitle{
 text-align:center;
-color:gray;
+color:#666;
 margin-bottom:20px;
 }
 
 input, textarea{
 width:100%;
-padding:16px;
-border-radius:14px;
-border:1px solid #ddd;
-font-size:16px;
+padding:18px;
+border-radius:16px;
+border:1px solid #d8e2ff;
 margin-top:15px;
+font-size:16px;
 outline:none;
+background:#f9fbff;
 }
 
 button{
 width:100%;
-padding:16px;
-background:linear-gradient(135deg,#0057ff,#00a2ff);
+padding:18px;
 border:none;
-border-radius:14px;
-color:white;
-font-size:17px;
-font-weight:bold;
+border-radius:18px;
 margin-top:20px;
+font-size:17px;
+font-weight:600;
+background:linear-gradient(135deg,#005eff,#00b3ff);
+color:white;
+box-shadow:0 5px 15px rgba(0,94,255,0.3);
 }
 
 .services{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:15px;
+gap:18px;
 margin-top:20px;
 }
 
 .service{
 background:white;
-border-radius:20px;
 padding:25px 15px;
+border-radius:24px;
 text-align:center;
-box-shadow:0 3px 12px rgba(0,0,0,0.08);
-font-size:18px;
-font-weight:bold;
+box-shadow:0 5px 18px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.service:hover{
+transform:translateY(-5px);
 }
 
 .service span{
-font-size:35px;
+font-size:42px;
 display:block;
-margin-bottom:10px;
+margin-bottom:12px;
+}
+
+.service h3{
+font-size:18px;
+}
+
+.service p{
+font-size:13px;
+margin-top:5px;
+color:gray;
 }
 
 .topbar{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px;
+margin-top:20px;
 }
 
 .profile{
-font-weight:bold;
+font-weight:600;
+font-size:16px;
 }
 
 .logout{
-color:#0057ff;
-font-weight:bold;
+color:#005eff;
+font-weight:600;
 }
 
-.hide{
-display:none;
+.banner{
+margin-top:20px;
+background:linear-gradient(135deg,#001b44,#005eff);
+padding:22px;
+border-radius:24px;
+color:white;
+box-shadow:0 6px 20px rgba(0,0,0,0.15);
+}
+
+.banner h2{
+font-size:22px;
+}
+
+.banner p{
+margin-top:8px;
+opacity:0.9;
 }
 
 .pricebox{
-background:linear-gradient(135deg,#0057ff,#00a2ff);
+background:linear-gradient(135deg,#005eff,#00b3ff);
+padding:28px;
+border-radius:24px;
 color:white;
-padding:25px;
-border-radius:20px;
-margin-top:20px;
 text-align:center;
+margin-top:25px;
 }
 
 .price{
-font-size:42px;
-font-weight:bold;
+font-size:48px;
+font-weight:700;
 margin-top:10px;
 }
 
 .status{
-background:#eaf7ee;
+background:#ebfff2;
 padding:18px;
-border-radius:16px;
-margin-top:20px;
-font-weight:bold;
-color:#0c8a43;
+border-radius:18px;
+margin-top:18px;
 text-align:center;
+font-weight:600;
+color:#0d8f48;
+}
+
+.worker{
+margin-top:20px;
+background:white;
+padding:18px;
+border-radius:20px;
+display:flex;
+align-items:center;
+gap:15px;
+box-shadow:0 5px 18px rgba(0,0,0,0.08);
+}
+
+.worker img{
+width:65px;
+height:65px;
+border-radius:50%;
+}
+
+.worker h3{
+font-size:18px;
+}
+
+.worker p{
+color:gray;
+font-size:14px;
+margin-top:4px;
+}
+
+.chatbox{
+margin-top:20px;
+background:white;
+padding:22px;
+border-radius:22px;
+box-shadow:0 5px 18px rgba(0,0,0,0.08);
 }
 
 .cancel{
 background:red;
+box-shadow:none;
 }
 
-.chat{
-background:white;
-padding:18px;
-border-radius:18px;
+.rating{
+font-size:42px;
+text-align:center;
 margin-top:20px;
-box-shadow:0 2px 10px rgba(0,0,0,0.08);
+}
+
+.bottomnav{
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+background:white;
+display:flex;
+justify-content:space-around;
+padding:15px;
+box-shadow:0 -3px 15px rgba(0,0,0,0.08);
+}
+
+.bottomnav div{
+text-align:center;
+font-size:14px;
+font-weight:500;
+color:#005eff;
 }
 
 .footer{
 text-align:center;
-padding:30px 20px;
-font-size:14px;
+padding:35px 20px 90px;
 color:gray;
+font-size:14px;
+}
+
+.hide{
+display:none;
 }
 
 </style>
@@ -181,14 +324,37 @@ color:gray;
 
 <body>
 
-<div class="header">
-<div class="logo">VEYRO</div>
+<!-- SPLASH -->
+
+<div id="splash">
+
+<div class="logo">
+VEYRO
+</div>
+
 <div class="tagline">
 Home Services In Minutes
 </div>
+
+<div class="loading">
+Connecting Nearby Experts...
+</div>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="header">
+
+<h1>VEYRO</h1>
+
+<p>Fast Local Home Services</p>
+
 </div>
 
 <div class="container">
+
+<!-- LOGIN -->
 
 <div id="loginPage">
 
@@ -199,86 +365,122 @@ Welcome
 </div>
 
 <div class="subtitle">
-Login with your mobile number
+Secure Mobile OTP Login
 </div>
 
 <input
 type="tel"
 maxlength="10"
-placeholder="Enter 10 Digit Mobile Number">
+placeholder="Enter Mobile Number">
 
 <button onclick="login()">
-Continue with OTP
-</button>
-
-</div>
-
-</div>
-
-<div id="homePage" class="hide">
-
-<div class="topbar">
-<div class="profile">
-👤 Customer
-</div>
-
-<div class="logout">
-Logout
-</div>
-</div>
-
-<div class="title">
-Select Service
-</div>
-
-<div class="services">
-
-<div class="service"
-onclick="openLocation('Plumber')">
-<span>🧑‍🔧</span>
-Plumber
-</div>
-
-<div class="service"
-onclick="openLocation('Painter')">
-<span>🎨</span>
-Painter
-</div>
-
-<div class="service"
-onclick="openLocation('Electrician')">
-<span>⚡</span>
-Electrician
-</div>
-
-<div class="service"
-onclick="openLocation('Cleaning')">
-<span>🧹</span>
-Cleaning
-</div>
-
-</div>
-
-</div>
-
-<div id="locationPage" class="hide">
-
-<div class="card">
-
-<div class="title">
-Select Location
-</div>
-
-<input
-placeholder="Enter Service Address">
-
-<button onclick="showBooking()">
 Continue
 </button>
 
 </div>
 
 </div>
+
+<!-- HOME -->
+
+<div id="homePage" class="hide">
+
+<div class="topbar">
+
+<div class="profile">
+👤 Hello Customer
+</div>
+
+<div class="logout">
+Logout
+</div>
+
+</div>
+
+<div class="banner">
+
+<h2>
+20% OFF First Booking
+</h2>
+
+<p>
+Trusted professionals at your doorstep
+</p>
+
+</div>
+
+<div class="services">
+
+<div class="service"
+onclick="bookService('Plumber')">
+
+<span>🧑‍🔧</span>
+
+<h3>Plumber</h3>
+
+<p>Arrives in 20 mins</p>
+
+</div>
+
+<div class="service"
+onclick="bookService('Painter')">
+
+<span>🎨</span>
+
+<h3>Painter</h3>
+
+<p>Professional Service</p>
+
+</div>
+
+<div class="service"
+onclick="bookService('Electrician')">
+
+<span>⚡</span>
+
+<h3>Electrician</h3>
+
+<p>Fast Repairs</p>
+
+</div>
+
+<div class="service"
+onclick="bookService('Cleaning')">
+
+<span>🧹</span>
+
+<h3>Cleaning</h3>
+
+<p>Home Deep Clean</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- LOCATION -->
+
+<div id="locationPage" class="hide">
+
+<div class="card">
+
+<div class="title">
+Select Address
+</div>
+
+<input
+placeholder="Enter Service Address">
+
+<button onclick="confirmBooking()">
+Find Nearby Worker
+</button>
+
+</div>
+
+</div>
+
+<!-- BOOKING -->
 
 <div id="bookingPage" class="hide">
 
@@ -292,9 +494,9 @@ Plumber
 ₹299
 </div>
 
-<div>
-Worker will arrive in 30 mins
-</div>
+<p>
+Worker arriving in 18 mins
+</p>
 
 </div>
 
@@ -302,12 +504,32 @@ Worker will arrive in 30 mins
 ✅ Booking Active
 </div>
 
-<div class="chat">
+<div class="worker">
 
-<b>Chat With VEYRO Support</b>
+<img src="https://i.pravatar.cc/100">
+
+<div>
+
+<h3>
+Ramesh Kumar
+</h3>
+
+<p>
+⭐ 4.9 Rated Professional
+</p>
+
+</div>
+
+</div>
+
+<div class="chatbox">
+
+<h3>
+Support Chat
+</h3>
 
 <textarea
-placeholder="Type your issue here"></textarea>
+placeholder="Write your issue"></textarea>
 
 <button>
 Send Message
@@ -327,6 +549,8 @@ Cancel Booking
 
 </div>
 
+<!-- RATING -->
+
 <div id="ratingPage" class="hide">
 
 <div class="card">
@@ -335,11 +559,7 @@ Cancel Booking
 Rate Your Experience
 </div>
 
-<div style="
-font-size:42px;
-text-align:center;
-margin-top:15px;
-">
+<div class="rating">
 ⭐ ⭐ ⭐ ⭐ ⭐
 </div>
 
@@ -352,6 +572,28 @@ Submit Review
 
 </div>
 
+</div>
+
+</div>
+
+<!-- BOTTOM NAV -->
+
+<div class="bottomnav">
+
+<div>
+🏠<br>Home
+</div>
+
+<div>
+📦<br>Bookings
+</div>
+
+<div>
+💬<br>Support
+</div>
+
+<div>
+👤<br>Profile
 </div>
 
 </div>
@@ -377,7 +619,7 @@ document.getElementById(
 
 }
 
-function openLocation(service){
+function bookService(service){
 
 currentService=service;
 
@@ -391,7 +633,7 @@ document.getElementById(
 
 }
 
-function showBooking(){
+function confirmBooking(){
 
 document.getElementById(
 "locationPage"
