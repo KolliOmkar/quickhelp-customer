@@ -19,17 +19,18 @@ font-family:'Poppins',sans-serif;
 }
 
 body{
-background:#f3f7ff;
+background:#fffaf5;
 overflow-x:hidden;
+color:#222;
 }
 
-/* SPLASH SCREEN */
+/* SPLASH */
 
 #splash{
 position:fixed;
 width:100%;
 height:100vh;
-background:linear-gradient(135deg,#001b44,#005eff,#00b3ff);
+background:linear-gradient(135deg,#ff6b00,#ff9f43);
 display:flex;
 justify-content:center;
 align-items:center;
@@ -48,7 +49,7 @@ visibility:hidden;
 }
 
 .logo{
-font-size:52px;
+font-size:58px;
 font-weight:700;
 letter-spacing:5px;
 animation:zoom 1.5s infinite alternate;
@@ -70,68 +71,84 @@ opacity:0.9;
 }
 
 .loading{
-margin-top:25px;
+margin-top:20px;
 font-size:15px;
 opacity:0.8;
 }
 
-/* MAIN */
+/* HEADER */
 
-.container{
-max-width:500px;
-margin:auto;
-padding:20px;
-}
-
-.header{
-background:linear-gradient(135deg,#005eff,#00b3ff);
-padding:35px 25px;
+.hero{
+background:linear-gradient(135deg,#ff6b00,#ff9f43);
+padding:45px 25px 70px;
 border-bottom-left-radius:35px;
 border-bottom-right-radius:35px;
 color:white;
-box-shadow:0 6px 25px rgba(0,0,0,0.15);
+position:relative;
 }
 
-.header h1{
-font-size:34px;
+.hero h1{
+font-size:42px;
+line-height:1.2;
 font-weight:700;
 }
 
-.header p{
-margin-top:8px;
-opacity:0.9;
+.hero p{
+margin-top:15px;
+font-size:16px;
+opacity:0.95;
+line-height:1.5;
 }
+
+.loginbtn{
+margin-top:25px;
+background:white;
+color:#ff6b00;
+padding:16px 22px;
+border:none;
+border-radius:18px;
+font-size:16px;
+font-weight:600;
+}
+
+/* CONTAINER */
+
+.container{
+padding:20px;
+max-width:520px;
+margin:auto;
+}
+
+/* CARD */
 
 .card{
 background:white;
-padding:25px;
+padding:24px;
 border-radius:28px;
-margin-top:25px;
-box-shadow:0 6px 20px rgba(0,0,0,0.08);
+margin-top:-40px;
+box-shadow:0 6px 25px rgba(0,0,0,0.08);
+position:relative;
+z-index:10;
 }
 
-.title{
+.card h2{
 font-size:28px;
-font-weight:600;
-text-align:center;
 margin-bottom:8px;
 }
 
-.subtitle{
-text-align:center;
+.card p{
 color:#666;
 margin-bottom:20px;
 }
 
-input, textarea{
+input{
 width:100%;
 padding:18px;
 border-radius:16px;
-border:1px solid #d8e2ff;
-margin-top:15px;
+border:1px solid #ffe1cc;
 font-size:16px;
 outline:none;
-background:#f9fbff;
+background:#fff8f3;
 }
 
 button{
@@ -139,27 +156,39 @@ width:100%;
 padding:18px;
 border:none;
 border-radius:18px;
-margin-top:20px;
+background:linear-gradient(135deg,#ff6b00,#ff9f43);
+color:white;
 font-size:17px;
 font-weight:600;
-background:linear-gradient(135deg,#005eff,#00b3ff);
-color:white;
-box-shadow:0 5px 15px rgba(0,94,255,0.3);
+margin-top:18px;
+}
+
+/* SERVICES */
+
+.sectiontitle{
+margin-top:35px;
+font-size:28px;
+font-weight:700;
+}
+
+.sectionsub{
+color:#666;
+margin-top:8px;
 }
 
 .services{
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:18px;
-margin-top:20px;
+margin-top:25px;
 }
 
 .service{
 background:white;
-padding:25px 15px;
+padding:24px 15px;
 border-radius:24px;
 text-align:center;
-box-shadow:0 5px 18px rgba(0,0,0,0.08);
+box-shadow:0 5px 18px rgba(0,0,0,0.07);
 transition:0.3s;
 }
 
@@ -178,80 +207,66 @@ font-size:18px;
 }
 
 .service p{
+margin-top:6px;
 font-size:13px;
-margin-top:5px;
 color:gray;
 }
 
-.topbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-top:20px;
-}
+/* OFFER */
 
-.profile{
-font-weight:600;
-font-size:16px;
-}
-
-.logout{
-color:#005eff;
-font-weight:600;
-}
-
-.banner{
-margin-top:20px;
-background:linear-gradient(135deg,#001b44,#005eff);
-padding:22px;
-border-radius:24px;
+.offer{
+margin-top:28px;
+background:linear-gradient(135deg,#2c1405,#ff6b00);
+padding:25px;
+border-radius:26px;
 color:white;
-box-shadow:0 6px 20px rgba(0,0,0,0.15);
 }
 
-.banner h2{
-font-size:22px;
+.offer h2{
+font-size:28px;
 }
 
-.banner p{
-margin-top:8px;
+.offer p{
+margin-top:10px;
 opacity:0.9;
 }
 
-.pricebox{
-background:linear-gradient(135deg,#005eff,#00b3ff);
-padding:28px;
-border-radius:24px;
-color:white;
-text-align:center;
-margin-top:25px;
+/* BOOKING */
+
+.booking{
+display:none;
+background:white;
+padding:24px;
+border-radius:28px;
+margin-top:30px;
+box-shadow:0 6px 25px rgba(0,0,0,0.08);
 }
 
 .price{
-font-size:48px;
+font-size:52px;
 font-weight:700;
-margin-top:10px;
+margin-top:15px;
+color:#ff6b00;
 }
 
 .status{
-background:#ebfff2;
-padding:18px;
-border-radius:18px;
 margin-top:18px;
-text-align:center;
+background:#ecfff3;
+padding:16px;
+border-radius:16px;
+color:#0a8a45;
 font-weight:600;
-color:#0d8f48;
+text-align:center;
 }
 
 .worker{
 margin-top:20px;
-background:white;
-padding:18px;
-border-radius:20px;
 display:flex;
 align-items:center;
 gap:15px;
-box-shadow:0 5px 18px rgba(0,0,0,0.08);
+padding:18px;
+background:#fff8f3;
+border-radius:20px;
 }
 
 .worker img{
@@ -265,29 +280,47 @@ font-size:18px;
 }
 
 .worker p{
-color:gray;
 font-size:14px;
+color:gray;
 margin-top:4px;
 }
 
-.chatbox{
-margin-top:20px;
+/* SUPPORT */
+
+.supportbtn{
 background:white;
-padding:22px;
-border-radius:22px;
-box-shadow:0 5px 18px rgba(0,0,0,0.08);
+color:#ff6b00;
+border:2px solid #ff6b00;
 }
 
-.cancel{
-background:red;
-box-shadow:none;
+/* RATING */
+
+.ratingpage{
+display:none;
+margin-top:30px;
+background:white;
+padding:24px;
+border-radius:28px;
+box-shadow:0 6px 25px rgba(0,0,0,0.08);
 }
 
-.rating{
+.stars{
 font-size:42px;
 text-align:center;
-margin-top:20px;
+margin-top:18px;
 }
+
+/* FOOTER */
+
+.footer{
+margin-top:40px;
+padding:30px 20px 100px;
+text-align:center;
+color:gray;
+font-size:14px;
+}
+
+/* NAV */
 
 .bottomnav{
 position:fixed;
@@ -305,18 +338,7 @@ box-shadow:0 -3px 15px rgba(0,0,0,0.08);
 text-align:center;
 font-size:14px;
 font-weight:500;
-color:#005eff;
-}
-
-.footer{
-text-align:center;
-padding:35px 20px 90px;
-color:gray;
-font-size:14px;
-}
-
-.hide{
-display:none;
+color:#ff6b00;
 }
 
 </style>
@@ -333,22 +355,31 @@ VEYRO
 </div>
 
 <div class="tagline">
-Home Services In Minutes
+Fast Home Services
 </div>
 
 <div class="loading">
-Connecting Nearby Experts...
+Connecting nearby professionals...
 </div>
 
 </div>
 
-<!-- MAIN -->
+<!-- HERO -->
 
-<div class="header">
+<div class="hero">
 
-<h1>VEYRO</h1>
+<h1>
+Book Trusted Local Experts
+</h1>
 
-<p>Fast Local Home Services</p>
+<p>
+Fast, reliable and affordable home services at your doorstep.
+</p>
+
+<button class="loginbtn"
+onclick="openLogin()">
+Login with OTP
+</button>
 
 </div>
 
@@ -356,17 +387,15 @@ Connecting Nearby Experts...
 
 <!-- LOGIN -->
 
-<div id="loginPage">
+<div class="card" id="loginCard">
 
-<div class="card">
+<h2>
+Welcome to VEYRO
+</h2>
 
-<div class="title">
-Welcome
-</div>
-
-<div class="subtitle">
-Secure Mobile OTP Login
-</div>
+<p>
+Secure mobile number login
+</p>
 
 <input
 type="tel"
@@ -379,35 +408,29 @@ Continue
 
 </div>
 
-</div>
+<!-- OFFER -->
 
-<!-- HOME -->
-
-<div id="homePage" class="hide">
-
-<div class="topbar">
-
-<div class="profile">
-👤 Hello Customer
-</div>
-
-<div class="logout">
-Logout
-</div>
-
-</div>
-
-<div class="banner">
+<div class="offer">
 
 <h2>
 20% OFF First Booking
 </h2>
 
 <p>
-Trusted professionals at your doorstep
+Trusted professionals in your area.
 </p>
 
 </div>
+
+<!-- SERVICES -->
+
+<h2 class="sectiontitle">
+Popular Services
+</h2>
+
+<p class="sectionsub">
+Choose what you need today
+</p>
 
 <div class="services">
 
@@ -423,24 +446,13 @@ onclick="bookService('Plumber')">
 </div>
 
 <div class="service"
-onclick="bookService('Painter')">
-
-<span>🎨</span>
-
-<h3>Painter</h3>
-
-<p>Professional Service</p>
-
-</div>
-
-<div class="service"
 onclick="bookService('Electrician')">
 
 <span>⚡</span>
 
 <h3>Electrician</h3>
 
-<p>Fast Repairs</p>
+<p>Quick repairs</p>
 
 </div>
 
@@ -451,30 +463,18 @@ onclick="bookService('Cleaning')">
 
 <h3>Cleaning</h3>
 
-<p>Home Deep Clean</p>
+<p>Deep cleaning</p>
 
 </div>
 
-</div>
+<div class="service"
+onclick="bookService('Painter')">
 
-</div>
+<span>🎨</span>
 
-<!-- LOCATION -->
+<h3>Painter</h3>
 
-<div id="locationPage" class="hide">
-
-<div class="card">
-
-<div class="title">
-Select Address
-</div>
-
-<input
-placeholder="Enter Service Address">
-
-<button onclick="confirmBooking()">
-Find Nearby Worker
-</button>
+<p>Professional painting</p>
 
 </div>
 
@@ -482,13 +482,12 @@ Find Nearby Worker
 
 <!-- BOOKING -->
 
-<div id="bookingPage" class="hide">
+<div class="booking"
+id="bookingPage">
 
-<div class="pricebox">
-
-<div id="serviceTitle">
+<h2 id="servicename">
 Plumber
-</div>
+</h2>
 
 <div class="price">
 ₹299
@@ -498,10 +497,8 @@ Plumber
 Worker arriving in 18 mins
 </p>
 
-</div>
-
 <div class="status">
-✅ Booking Active
+✅ Booking Confirmed
 </div>
 
 <div class="worker">
@@ -522,28 +519,16 @@ Ramesh Kumar
 
 </div>
 
-<div class="chatbox">
-
-<h3>
-Support Chat
-</h3>
-
-<textarea
-placeholder="Write your issue"></textarea>
-
-<button>
-Send Message
+<button
+class="supportbtn">
+Need Help?
 </button>
 
-</div>
-
-<button onclick="completeService()">
+<button onclick="completeWork()">
 Work Completed
 </button>
 
-<button
-class="cancel"
-onclick="cancelBooking()">
+<button onclick="cancelBooking()">
 Cancel Booking
 </button>
 
@@ -551,20 +536,16 @@ Cancel Booking
 
 <!-- RATING -->
 
-<div id="ratingPage" class="hide">
+<div class="ratingpage"
+id="ratingPage">
 
-<div class="card">
-
-<div class="title">
+<h2>
 Rate Your Experience
-</div>
+</h2>
 
-<div class="rating">
+<div class="stars">
 ⭐ ⭐ ⭐ ⭐ ⭐
 </div>
-
-<textarea
-placeholder="Write feedback"></textarea>
 
 <button>
 Submit Review
@@ -574,9 +555,16 @@ Submit Review
 
 </div>
 
+<!-- FOOTER -->
+
+<div class="footer">
+
+© 2025 VEYRO <br>
+Fast Local Home Services
+
 </div>
 
-<!-- BOTTOM NAV -->
+<!-- NAV -->
 
 <div class="bottomnav">
 
@@ -598,66 +586,52 @@ Submit Review
 
 </div>
 
-<div class="footer">
-© 2025 VEYRO <br>
-Fast Local Home Services
-</div>
-
 <script>
 
-let currentService="";
+function openLogin(){
+
+window.scrollTo({
+top:250,
+behavior:'smooth'
+});
+
+}
 
 function login(){
 
-document.getElementById(
-"loginPage"
-).style.display="none";
-
-document.getElementById(
-"homePage"
-).style.display="block";
+alert(
+"OTP Login Successful"
+);
 
 }
 
 function bookService(service){
 
-currentService=service;
-
-document.getElementById(
-"homePage"
-).style.display="none";
-
-document.getElementById(
-"locationPage"
-).style.display="block";
-
-}
-
-function confirmBooking(){
-
-document.getElementById(
-"locationPage"
-).style.display="none";
-
 document.getElementById(
 "bookingPage"
 ).style.display="block";
 
 document.getElementById(
-"serviceTitle"
-).innerHTML=currentService;
+"servicename"
+).innerHTML=service;
+
+window.scrollTo({
+top:1200,
+behavior:'smooth'
+});
 
 }
 
-function completeService(){
-
-document.getElementById(
-"bookingPage"
-).style.display="none";
+function completeWork(){
 
 document.getElementById(
 "ratingPage"
 ).style.display="block";
+
+window.scrollTo({
+top:1700,
+behavior:'smooth'
+});
 
 }
 
@@ -666,10 +640,6 @@ function cancelBooking(){
 document.getElementById(
 "bookingPage"
 ).style.display="none";
-
-document.getElementById(
-"homePage"
-).style.display="block";
 
 }
 
