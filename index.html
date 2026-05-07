@@ -1,47 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VEYRO</title>
 
 <style>
+
 body{
 margin:0;
 font-family:Arial;
-background:#f5f7fb;
+background:#f2f6ff;
 }
 
-.top{
+.header{
 background:#0A66FF;
-color:white;
-padding:18px;
+padding:25px;
 text-align:center;
-font-size:32px;
+color:white;
+}
+
+.logo{
+font-size:38px;
 font-weight:bold;
 }
 
 .tag{
-text-align:center;
-margin-top:5px;
-color:white;
-font-size:14px;
+margin-top:8px;
+font-size:15px;
 }
 
-.login-box{
+.container{
+padding:20px;
+max-width:500px;
+margin:auto;
+}
+
+.login{
 background:white;
-width:90%;
-max-width:400px;
-margin:30px auto;
-padding:25px;
-border-radius:14px;
+padding:20px;
+border-radius:15px;
 box-shadow:0 0 10px rgba(0,0,0,0.1);
 text-align:center;
 }
 
 input{
 width:90%;
-padding:14px;
+padding:15px;
 margin-top:15px;
 border-radius:10px;
 border:1px solid #ccc;
@@ -50,29 +54,25 @@ font-size:16px;
 
 button{
 width:95%;
-padding:14px;
-margin-top:18px;
-background:#0A66FF;
-color:white;
+padding:15px;
+margin-top:15px;
 border:none;
 border-radius:10px;
-font-size:17px;
+background:#0A66FF;
+color:white;
+font-size:16px;
 font-weight:bold;
 }
 
-.services{
-padding:20px;
-}
-
-.card{
+.service{
 background:white;
 padding:18px;
-margin-bottom:15px;
-border-radius:12px;
-box-shadow:0 0 8px rgba(0,0,0,0.08);
+margin-top:18px;
+border-radius:14px;
+box-shadow:0 0 10px rgba(0,0,0,0.08);
 }
 
-.card h2{
+.service h2{
 margin:0;
 }
 
@@ -82,63 +82,63 @@ font-weight:bold;
 margin-top:8px;
 }
 
-.book{
-margin-top:10px;
-}
-
 .footer{
 text-align:center;
 padding:20px;
 color:gray;
-font-size:14px;
+font-size:13px;
 }
+
 </style>
 </head>
 
 <body>
 
-<div class="top">
-VEYRO
+<div class="header">
+<div class="logo">VEYRO</div>
 <div class="tag">Home Services in Minutes</div>
 </div>
 
-<div class="login-box">
+<div class="container">
+
+<div class="login">
+
 <h2>Welcome</h2>
+
 <p>Login with Mobile Number</p>
 
 <input type="number" placeholder="Enter 10 digit mobile number">
 
 <button>Login with OTP</button>
+
 </div>
 
-<div class="services">
-
-<div class="card">
+<div class="service">
 <h2>🧑‍🔧 Plumber</h2>
 <p>Professional plumbing services</p>
 <div class="price">Starting ₹299</div>
-<button class="book">Book Now</button>
+<button>Book Now</button>
 </div>
 
-<div class="card">
+<div class="service">
 <h2>🎨 Painter</h2>
-<p>Home painting experts</p>
+<p>Professional painting services</p>
 <div class="price">Starting ₹499</div>
-<button class="book">Book Now</button>
+<button>Book Now</button>
 </div>
 
-<div class="card">
+<div class="service">
 <h2>⚡ Electrician</h2>
 <p>Fast electrical repair services</p>
 <div class="price">Starting ₹249</div>
-<button class="book">Book Now</button>
+<button>Book Now</button>
 </div>
 
-<div class="card">
+<div class="service">
 <h2>🧹 Cleaning</h2>
-<p>Home deep cleaning services</p>
+<p>Deep home cleaning services</p>
 <div class="price">Starting ₹399</div>
-<button class="book">Book Now</button>
+<button>Book Now</button>
 </div>
 
 </div>
