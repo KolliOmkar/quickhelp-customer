@@ -1,94 +1,179 @@
-l<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>VEYRO</title>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VEYRO</title>
 
 <style>
 
-body{
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
 font-family:Arial;
-background:#f4f7ff;
+}
+
+body{
+background:#f4f7fb;
 }
 
 .header{
-background:#1565ff;
-padding:25px;
-text-align:center;
+background:linear-gradient(135deg,#0057ff,#00a2ff);
+padding:30px 20px;
 color:white;
-font-size:34px;
+text-align:center;
+border-bottom-left-radius:30px;
+border-bottom-right-radius:30px;
+box-shadow:0 4px 20px rgba(0,0,0,0.15);
+}
+
+.logo{
+font-size:38px;
 font-weight:bold;
+letter-spacing:2px;
+}
+
+.tagline{
+margin-top:8px;
+font-size:16px;
+opacity:0.9;
 }
 
 .container{
 padding:20px;
-text-align:center;
+max-width:500px;
+margin:auto;
 }
 
 .card{
 background:white;
-padding:20px;
-border-radius:20px;
+padding:25px;
+border-radius:24px;
 margin-top:20px;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
 }
 
-input{
-width:90%;
-padding:15px;
-border-radius:12px;
-border:1px solid #ccc;
-margin-top:15px;
+.title{
+font-size:26px;
+font-weight:bold;
+margin-bottom:10px;
+text-align:center;
+}
+
+.subtitle{
+text-align:center;
+color:gray;
+margin-bottom:20px;
+}
+
+input, textarea{
+width:100%;
+padding:16px;
+border-radius:14px;
+border:1px solid #ddd;
 font-size:16px;
+margin-top:15px;
+outline:none;
 }
 
 button{
-background:#1565ff;
-color:white;
+width:100%;
+padding:16px;
+background:linear-gradient(135deg,#0057ff,#00a2ff);
 border:none;
-padding:15px;
-width:95%;
-border-radius:12px;
-font-size:16px;
+border-radius:14px;
+color:white;
+font-size:17px;
+font-weight:bold;
+margin-top:20px;
+}
+
+.services{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
 margin-top:20px;
 }
 
 .service{
-background:#1565ff;
-color:white;
+background:white;
+border-radius:20px;
+padding:25px 15px;
+text-align:center;
+box-shadow:0 3px 12px rgba(0,0,0,0.08);
+font-size:18px;
+font-weight:bold;
+}
+
+.service span{
+font-size:35px;
+display:block;
+margin-bottom:10px;
+}
+
+.topbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
 padding:20px;
-border-radius:15px;
-margin-top:15px;
-font-size:22px;
+}
+
+.profile{
+font-weight:bold;
+}
+
+.logout{
+color:#0057ff;
+font-weight:bold;
 }
 
 .hide{
 display:none;
 }
 
-.topbar{
-display:flex;
-justify-content:space-between;
-padding:15px;
-background:white;
-font-weight:bold;
+.pricebox{
+background:linear-gradient(135deg,#0057ff,#00a2ff);
+color:white;
+padding:25px;
+border-radius:20px;
+margin-top:20px;
+text-align:center;
 }
 
-textarea{
-width:90%;
-height:100px;
-padding:10px;
-border-radius:10px;
-border:1px solid #ccc;
-margin-top:15px;
+.price{
+font-size:42px;
+font-weight:bold;
+margin-top:10px;
+}
+
+.status{
+background:#eaf7ee;
+padding:18px;
+border-radius:16px;
+margin-top:20px;
+font-weight:bold;
+color:#0c8a43;
+text-align:center;
+}
+
+.cancel{
+background:red;
+}
+
+.chat{
+background:white;
+padding:18px;
+border-radius:18px;
+margin-top:20px;
+box-shadow:0 2px 10px rgba(0,0,0,0.08);
 }
 
 .footer{
-margin-top:40px;
-padding:20px;
+text-align:center;
+padding:30px 20px;
 font-size:14px;
-color:#666;
+color:gray;
 }
 
 </style>
@@ -97,121 +182,169 @@ color:#666;
 <body>
 
 <div class="header">
-VEYRO
+<div class="logo">VEYRO</div>
+<div class="tagline">
+Home Services In Minutes
+</div>
 </div>
 
 <div class="container">
 
-<div class="card" id="loginPage">
+<div id="loginPage">
 
-<h2>Welcome</h2>
+<div class="card">
 
-<p>Home Services In Minutes</p>
+<div class="title">
+Welcome
+</div>
 
-<input type="tel"
+<div class="subtitle">
+Login with your mobile number
+</div>
+
+<input
+type="tel"
 maxlength="10"
-placeholder="Enter Mobile Number">
+placeholder="Enter 10 Digit Mobile Number">
 
 <button onclick="login()">
-Login with OTP
+Continue with OTP
 </button>
 
 </div>
 
-<div class="hide" id="homePage">
+</div>
+
+<div id="homePage" class="hide">
 
 <div class="topbar">
-<div>Hello Customer</div>
-<div>Logout</div>
+<div class="profile">
+👤 Customer
 </div>
 
-<div class="container">
-
-<h2>Select Service</h2>
-
-<div class="service"
-onclick="selectService('Plumber')">
-🧑‍🔧 Plumber
+<div class="logout">
+Logout
+</div>
 </div>
 
-<div class="service"
-onclick="selectService('Painter')">
-🎨 Painter
+<div class="title">
+Select Service
 </div>
 
+<div class="services">
+
 <div class="service"
-onclick="selectService('Electrician')">
-⚡ Electrician
+onclick="openLocation('Plumber')">
+<span>🧑‍🔧</span>
+Plumber
 </div>
 
 <div class="service"
-onclick="selectService('Cleaning')">
-🧹 Cleaning
+onclick="openLocation('Painter')">
+<span>🎨</span>
+Painter
+</div>
+
+<div class="service"
+onclick="openLocation('Electrician')">
+<span>⚡</span>
+Electrician
+</div>
+
+<div class="service"
+onclick="openLocation('Cleaning')">
+<span>🧹</span>
+Cleaning
 </div>
 
 </div>
 
 </div>
 
-<div class="card hide" id="locationPage">
+<div id="locationPage" class="hide">
 
-<h2>Select Location</h2>
+<div class="card">
 
-<input type="text"
-placeholder="Enter Address">
+<div class="title">
+Select Location
+</div>
 
-<button onclick="showPrice()">
+<input
+placeholder="Enter Service Address">
+
+<button onclick="showBooking()">
 Continue
 </button>
 
 </div>
 
-<div class="card hide" id="pricePage">
+</div>
 
-<h2 id="serviceName"></h2>
+<div id="bookingPage" class="hide">
 
-<h1>₹299</h1>
+<div class="pricebox">
 
-<p>Service Charge</p>
+<div id="serviceTitle">
+Plumber
+</div>
 
-<button onclick="confirmBooking()">
-Confirm Booking
-</button>
+<div class="price">
+₹299
+</div>
+
+<div>
+Worker will arrive in 30 mins
+</div>
 
 </div>
 
-<div class="card hide" id="statusPage">
+<div class="status">
+✅ Booking Active
+</div>
 
-<h2>Booking Confirmed ✅</h2>
+<div class="chat">
 
-<p>Worker will arrive soon</p>
+<b>Chat With VEYRO Support</b>
 
-<div class="service">
-🚴 Worker Assigned
+<textarea
+placeholder="Type your issue here"></textarea>
+
+<button>
+Send Message
+</button>
+
 </div>
 
 <button onclick="completeService()">
-Complete Service
+Work Completed
 </button>
 
 <button
-onclick="cancelBooking()"
-style="background:red;">
+class="cancel"
+onclick="cancelBooking()">
 Cancel Booking
 </button>
 
 </div>
 
-<div class="card hide" id="ratingPage">
+<div id="ratingPage" class="hide">
 
-<h2>Rate Service</h2>
+<div class="card">
 
-<div style="font-size:40px;">
+<div class="title">
+Rate Your Experience
+</div>
+
+<div style="
+font-size:42px;
+text-align:center;
+margin-top:15px;
+">
 ⭐ ⭐ ⭐ ⭐ ⭐
 </div>
 
 <textarea
-placeholder="Write Feedback"></textarea>
+placeholder="Write feedback"></textarea>
 
 <button>
 Submit Review
@@ -219,16 +352,18 @@ Submit Review
 
 </div>
 
-<div class="footer">
-© 2025 VEYRO <br>
-Home Services In Minutes
 </div>
 
+</div>
+
+<div class="footer">
+© 2025 VEYRO <br>
+Fast Local Home Services
 </div>
 
 <script>
 
-let selectedService="";
+let currentService="";
 
 function login(){
 
@@ -242,9 +377,9 @@ document.getElementById(
 
 }
 
-function selectService(service){
+function openLocation(service){
 
-selectedService=service;
+currentService=service;
 
 document.getElementById(
 "homePage"
@@ -256,38 +391,26 @@ document.getElementById(
 
 }
 
-function showPrice(){
+function showBooking(){
 
 document.getElementById(
 "locationPage"
 ).style.display="none";
 
 document.getElementById(
-"pricePage"
+"bookingPage"
 ).style.display="block";
 
 document.getElementById(
-"serviceName"
-).innerHTML=selectedService;
-
-}
-
-function confirmBooking(){
-
-document.getElementById(
-"pricePage"
-).style.display="none";
-
-document.getElementById(
-"statusPage"
-).style.display="block";
+"serviceTitle"
+).innerHTML=currentService;
 
 }
 
 function completeService(){
 
 document.getElementById(
-"statusPage"
+"bookingPage"
 ).style.display="none";
 
 document.getElementById(
@@ -298,16 +421,8 @@ document.getElementById(
 
 function cancelBooking(){
 
-let reason = prompt(
-"Reason for cancellation?"
-);
-
-alert(
-"Booking Cancelled\nReason: " + reason
-);
-
 document.getElementById(
-"statusPage"
+"bookingPage"
 ).style.display="none";
 
 document.getElementById(
@@ -320,4 +435,3 @@ document.getElementById(
 
 </body>
 </html>
-
