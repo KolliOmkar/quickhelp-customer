@@ -1,46 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VEYRO</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-
 body{
 margin:0;
 font-family:Arial;
-background:#f2f6ff;
+background:#f4f7ff;
 }
 
 .header{
-background:#0A66FF;
+background:#1565ff;
+color:white;
 padding:25px;
 text-align:center;
-color:white;
-}
-
-.logo{
-font-size:38px;
+font-size:32px;
 font-weight:bold;
-}
-
-.tag{
-margin-top:8px;
-font-size:15px;
 }
 
 .container{
 padding:20px;
-max-width:500px;
-margin:auto;
+text-align:center;
 }
 
-.login{
+.card{
 background:white;
 padding:20px;
-border-radius:15px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
-text-align:center;
+margin-top:20px;
+border-radius:20px;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
 }
 
 input{
@@ -53,40 +43,44 @@ font-size:16px;
 }
 
 button{
-width:95%;
-padding:15px;
-margin-top:15px;
-border:none;
-border-radius:10px;
-background:#0A66FF;
+background:#1565ff;
 color:white;
+border:none;
+padding:15px 25px;
+border-radius:12px;
 font-size:16px;
-font-weight:bold;
+margin-top:20px;
+width:95%;
 }
 
 .service{
-background:white;
-padding:18px;
-margin-top:18px;
-border-radius:14px;
-box-shadow:0 0 10px rgba(0,0,0,0.08);
-}
-
-.service h2{
-margin:0;
-}
-
-.price{
-color:#0A66FF;
-font-weight:bold;
-margin-top:8px;
-}
-
-.footer{
-text-align:center;
+background:#1565ff;
+color:white;
 padding:20px;
-color:gray;
-font-size:13px;
+margin-top:15px;
+border-radius:15px;
+font-size:22px;
+}
+
+.hide{
+display:none;
+}
+
+.topbar{
+display:flex;
+justify-content:space-between;
+padding:15px;
+background:white;
+font-weight:bold;
+}
+
+textarea{
+width:90%;
+height:100px;
+padding:10px;
+margin-top:15px;
+border-radius:10px;
+border:1px solid #ccc;
 }
 
 </style>
@@ -95,54 +89,146 @@ font-size:13px;
 <body>
 
 <div class="header">
-<div class="logo">VEYRO</div>
-<div class="tag">Home Services in Minutes</div>
+VEYRO
 </div>
 
 <div class="container">
 
-<div class="login">
+<div class="card" id="loginPage">
 
 <h2>Welcome</h2>
 
-<p>Login with Mobile Number</p>
+<p>Home Services In Minutes</p>
 
-<input type="number" placeholder="Enter 10 digit mobile number">
+<input type="tel" placeholder="Enter Mobile Number" maxlength="10">
 
-<button>Login with OTP</button>
-
-</div>
-
-<div class="service">
-<h2>🧑‍🔧 Plumber</h2>
-<p>Professional plumbing services</p>
-<div class="price">Starting ₹299</div>
-<button>Book Now</button>
-</div>
-
-<div class="service">
-<h2>🎨 Painter</h2>
-<p>Professional painting services</p>
-<div class="price">Starting ₹499</div>
-<button>Book Now</button>
-</div>
-
-<div class="service">
-<h2>⚡ Electrician</h2>
-<p>Fast electrical repair services</p>
-<div class="price">Starting ₹249</div>
-<button>Book Now</button>
-</div>
-
-<div class="service">
-<h2>🧹 Cleaning</h2>
-<p>Deep home cleaning services</p>
-<div class="price">Starting ₹399</div>
-<button>Book Now</button>
-</div>
+<button onclick="login()">
+Login with OTP
+</button>
 
 </div>
 
+<div class="hide" id="homePage">
+
+<div class="topbar">
+<div>Hello Customer</div>
+<div>Logout</div>
+</div>
+
+<div class="container">
+
+<h2>Select Service</h2>
+
+<div class="service" onclick="selectService('Plumber')">
+🧑‍🔧 Plumber
+</div>
+
+<div class="service" onclick="selectService('Painter')">
+🎨 Painter
+</div>
+
+<div class="service" onclick="selectService('Electrician')">
+⚡ Electrician
+</div>
+
+<div class="service" onclick="selectService('Cleaning')">
+🧹 Cleaning
+</div>
+
+</div>
+
+</div>
+
+<div class="card hide" id="locationPage">
+
+<h2>Select Location</h2>
+
+<input type="text" placeholder="Enter Address">
+
+<button onclick="showPrice()">
+Continue
+</button>
+
+</div>
+
+<div class="card hide" id="pricePage">
+
+<h2 id="serviceName"></h2>
+
+<h1>₹299</h1>
+
+<p>Service Charge</p>
+
+<button onclick="completeBooking()">
+Confirm Booking
+</button>
+
+</div>
+
+<div class="card hide" id="ratingPage">
+
+<h2>Service Completed ✅</h2>
+
+<p>Rate Your Experience</p>
+
+<div style="font-size:40px;">
+⭐ ⭐ ⭐ ⭐ ⭐
+</div>
+
+<textarea placeholder="Write Feedback"></textarea>
+
+<button>
+Submit Review
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+let selectedService = "";
+
+function login(){
+
+document.getElementById("loginPage").style.display="none";
+
+document.getElementById("homePage").style.display="block";
+
+}
+
+function selectService(service){
+
+selectedService = service;
+
+document.getElementById("homePage").style.display="none";
+
+document.getElementById("locationPage").style.display="block";
+
+}
+
+function showPrice(){
+
+document.getElementById("locationPage").style.display="none";
+
+document.getElementById("pricePage").style.display="block";
+
+document.getElementById("serviceName").innerHTML=selectedService;
+
+}
+
+function completeBooking(){
+
+document.getElementById("pricePage").style.display="none";
+
+document.getElementById("ratingPage").style.display="block";
+
+}
+
+</script>
+
+</body>
+</html>
 <div class="footer">
 VEYRO © 2026
 </div>
