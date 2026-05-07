@@ -1,348 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>VEYRO</title>
 
+<link rel="stylesheet" href="style.css">
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
-body{
-background:#fffaf5;
-overflow-x:hidden;
-color:#222;
-}
-
-/* SPLASH */
-
-#splash{
-position:fixed;
-width:100%;
-height:100vh;
-background:linear-gradient(135deg,#ff6b00,#ff9f43);
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-z-index:9999;
-color:white;
-}
-
-.logo{
-font-size:60px;
-font-weight:700;
-letter-spacing:5px;
-animation:zoom 1.5s infinite alternate;
-}
-
-@keyframes zoom{
-from{
-transform:scale(1);
-}
-to{
-transform:scale(1.08);
-}
-}
-
-.tagline{
-margin-top:12px;
-font-size:18px;
-opacity:0.9;
-}
-
-/* LOGIN */
-
-.loginpage{
-height:100vh;
-display:none;
-justify-content:center;
-align-items:center;
-padding:25px;
-background:#fffaf5;
-}
-
-.loginbox{
-background:white;
-padding:35px;
-border-radius:32px;
-width:100%;
-max-width:430px;
-box-shadow:0 8px 25px rgba(0,0,0,0.08);
-}
-
-.loginbox h1{
-font-size:34px;
-margin-bottom:10px;
-}
-
-.loginbox p{
-color:gray;
-margin-bottom:25px;
-}
-
-input{
-width:100%;
-padding:18px;
-border-radius:18px;
-border:none;
-background:#fff5ef;
-font-size:16px;
-outline:none;
-}
-
-button{
-width:100%;
-padding:18px;
-border:none;
-border-radius:18px;
-background:linear-gradient(135deg,#ff6b00,#ff9f43);
-color:white;
-font-size:16px;
-font-weight:600;
-margin-top:18px;
-}
-
-/* TOPBAR */
-
-.topbar{
-background:linear-gradient(135deg,#ff6b00,#ff9f43);
-padding:25px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-color:white;
-border-bottom-left-radius:30px;
-border-bottom-right-radius:30px;
-}
-
-.topbar h2{
-font-size:32px;
-}
-
-.topbar p{
-opacity:0.9;
-margin-top:5px;
-}
-
-.profileicon{
-width:52px;
-height:52px;
-background:white;
-color:#ff6b00;
-display:flex;
-justify-content:center;
-align-items:center;
-border-radius:50%;
-font-size:24px;
-font-weight:bold;
-}
-
-/* CONTAINER */
-
-.container{
-padding:22px;
-max-width:550px;
-margin:auto;
-}
-
-/* SERVICES */
-
-.sectiontitle{
-font-size:30px;
-margin-top:20px;
-margin-bottom:20px;
-}
-
-.services{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:18px;
-}
-
-.service{
-background:white;
-padding:28px 18px;
-border-radius:28px;
-text-align:center;
-box-shadow:0 5px 20px rgba(0,0,0,0.07);
-transition:0.3s;
-}
-
-.service:hover{
-transform:translateY(-5px);
-}
-
-.service span{
-font-size:44px;
-display:block;
-margin-bottom:14px;
-}
-
-.service h3{
-font-size:20px;
-}
-
-.service p{
-margin-top:6px;
-font-size:13px;
-color:gray;
-}
-
-/* BOOKING */
-
-.booking{
-display:none;
-background:white;
-padding:25px;
-border-radius:30px;
-margin-top:35px;
-box-shadow:0 5px 20px rgba(0,0,0,0.08);
-}
-
-.booking h2{
-font-size:30px;
-}
-
-.price{
-font-size:56px;
-font-weight:700;
-margin-top:15px;
-color:#ff6b00;
-}
-
-.status{
-margin-top:18px;
-padding:15px;
-background:#ecfff3;
-border-radius:18px;
-color:#0a8a45;
-font-weight:600;
-text-align:center;
-}
-
-.worker{
-margin-top:22px;
-display:flex;
-align-items:center;
-gap:15px;
-background:#fff8f3;
-padding:18px;
-border-radius:22px;
-}
-
-.worker img{
-width:68px;
-height:68px;
-border-radius:50%;
-}
-
-.worker h3{
-font-size:20px;
-}
-
-.worker p{
-font-size:14px;
-color:gray;
-margin-top:5px;
-}
-
-/* RATING */
-
-.ratingpage{
-display:none;
-background:white;
-padding:25px;
-border-radius:30px;
-margin-top:35px;
-box-shadow:0 5px 20px rgba(0,0,0,0.08);
-text-align:center;
-}
-
-.ratingpage h2{
-font-size:30px;
-}
-
-.stars{
-font-size:42px;
-margin-top:20px;
-}
-
-/* PROFILE */
-
-.profilepanel{
-position:fixed;
-top:0;
-right:-100%;
-width:310px;
-height:100vh;
-background:white;
-z-index:999;
-padding:30px;
-transition:0.4s;
-box-shadow:-5px 0 20px rgba(0,0,0,0.08);
-}
-
-.profilepanel h2{
-font-size:32px;
-}
-
-.profilecard{
-margin-top:25px;
-background:#fff8f3;
-padding:22px;
-border-radius:22px;
-}
-
-.profilecard h3{
-font-size:24px;
-}
-
-.profilecard p{
-margin-top:8px;
-color:gray;
-}
-
-/* FOOTER */
-
-.footer{
-padding:40px 20px 110px;
-text-align:center;
-font-size:14px;
-color:gray;
-}
-
-/* NAV */
-
-.bottomnav{
-position:fixed;
-bottom:0;
-left:0;
-width:100%;
-background:white;
-display:flex;
-justify-content:space-around;
-padding:16px;
-box-shadow:0 -3px 15px rgba(0,0,0,0.08);
-}
-
-.bottomnav div{
-text-align:center;
-font-size:14px;
-font-weight:500;
-color:#ff6b00;
-}
-
-</style>
 </head>
 
 <body>
@@ -351,13 +19,9 @@ color:#ff6b00;
 
 <div id="splash">
 
-<div class="logo">
-VEYRO
-</div>
+<h1>VEYRO</h1>
 
-<div class="tagline">
-Fast Local Home Services
-</div>
+<p>Fast Local Home Services</p>
 
 </div>
 
@@ -367,21 +31,17 @@ Fast Local Home Services
 
 <div class="loginbox">
 
-<h1>
-Welcome to VEYRO
-</h1>
+<h2>Welcome to VEYRO</h2>
 
-<p>
-Login with your mobile number
-</p>
+<p>Login with mobile number</p>
 
 <input
 type="tel"
-placeholder="Enter Mobile Number"
-id="mobileInput">
+id="mobileInput"
+placeholder="Enter mobile number">
 
 <button onclick="loginUser()">
-Continue with OTP
+Continue
 </button>
 
 </div>
@@ -392,34 +52,30 @@ Continue with OTP
 
 <div id="mainApp" style="display:none;">
 
-<!-- TOPBAR -->
+<!-- HEADER -->
 
 <div class="topbar">
 
 <div>
 
-<h2>
-VEYRO
-</h2>
+<h2>VEYRO</h2>
 
-<p>
-Trusted nearby experts
-</p>
+<p>Trusted nearby experts</p>
 
 </div>
 
-<div class="profileicon"
-onclick="openProfile()">
+<div class="profile"
+onclick="toggleProfile()">
 👤
 </div>
 
 </div>
 
-<!-- MAIN -->
+<!-- SERVICES -->
 
 <div class="container">
 
-<h2 class="sectiontitle">
+<h2 class="title">
 Choose Service
 </h2>
 
@@ -473,19 +129,17 @@ onclick="bookService('Painter','699')">
 
 <!-- BOOKING -->
 
-<div class="booking"
-id="bookingPage">
+<div class="booking" id="bookingPage">
 
 <h2 id="serviceName">
 Cleaning
 </h2>
 
-<div class="price"
-id="servicePrice">
+<div class="price" id="servicePrice">
 ₹299
 </div>
 
-<p style="margin-top:10px;">
+<p class="arrival">
 Professional arriving in 20 mins
 </p>
 
@@ -499,13 +153,9 @@ Professional arriving in 20 mins
 
 <div>
 
-<h3>
-Rahul Sharma
-</h3>
+<h3>Rahul Sharma</h3>
 
-<p>
-⭐ 4.9 Rated Professional
-</p>
+<p>⭐ 4.9 Rated Professional</p>
 
 </div>
 
@@ -527,7 +177,7 @@ Cancel Booking
 id="ratingPage">
 
 <h2>
-Rate Your Experience
+Rate Experience
 </h2>
 
 <div class="stars">
@@ -542,7 +192,9 @@ Submit Review
 
 </div>
 
-<!-- PROFILE -->
+</div>
+
+<!-- PROFILE PANEL -->
 
 <div class="profilepanel"
 id="profilePanel">
@@ -553,7 +205,7 @@ My Profile
 
 <div class="profilecard">
 
-<h3 id="customerName">
+<h3>
 VEYRO Customer
 </h3>
 
@@ -569,146 +221,7 @@ Logout
 
 </div>
 
-<!-- FOOTER -->
-
-<div class="footer">
-
-© 2025 VEYRO <br>
-Fast Trusted Home Services
-
-</div>
-
-<!-- NAV -->
-
-<div class="bottomnav">
-
-<div>
-🏠<br>Home
-</div>
-
-<div>
-📦<br>Bookings
-</div>
-
-<div>
-💬<br>Support
-</div>
-
-<div>
-👤<br>Profile
-</div>
-
-</div>
-
-<script>
-
-setTimeout(() => {
-
-document.getElementById(
-"splash"
-).style.display="none";
-
-document.getElementById(
-"loginPage"
-).style.display="flex";
-
-},2500);
-
-function loginUser(){
-
-let mobile=document.getElementById(
-"mobileInput"
-).value;
-
-if(mobile.length<10){
-
-alert("Enter valid mobile number");
-
-return;
-
-}
-
-document.getElementById(
-"loginPage"
-).style.display="none";
-
-document.getElementById(
-"mainApp"
-).style.display="block";
-
-document.getElementById(
-"customerMobile"
-).innerHTML="+91 "+mobile;
-
-}
-
-function bookService(name,price){
-
-document.getElementById(
-"bookingPage"
-).style.display="block";
-
-document.getElementById(
-"serviceName"
-).innerHTML=name;
-
-document.getElementById(
-"servicePrice"
-).innerHTML="₹"+price;
-
-window.scrollTo({
-top:800,
-behavior:'smooth'
-});
-
-}
-
-function completeWork(){
-
-document.getElementById(
-"ratingPage"
-).style.display="block";
-
-window.scrollTo({
-top:1500,
-behavior:'smooth'
-});
-
-}
-
-function cancelBooking(){
-
-document.getElementById(
-"bookingPage"
-).style.display="none";
-
-}
-
-function openProfile(){
-
-let panel=document.getElementById(
-"profilePanel"
-);
-
-if(panel.style.right=="0px"){
-
-panel.style.right="-100%";
-
-}else{
-
-panel.style.right="0";
-
-}
-
-}
-
-function logoutUser(){
-
-location.reload();
-
-}
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
