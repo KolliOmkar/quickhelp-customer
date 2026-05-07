@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>VEYRO</title>
 
@@ -37,19 +36,10 @@ align-items:center;
 flex-direction:column;
 z-index:9999;
 color:white;
-animation:hideSplash 1s forwards;
-animation-delay:2.5s;
-}
-
-@keyframes hideSplash{
-to{
-opacity:0;
-visibility:hidden;
-}
 }
 
 .logo{
-font-size:58px;
+font-size:60px;
 font-weight:700;
 letter-spacing:5px;
 animation:zoom 1.5s infinite alternate;
@@ -65,90 +55,49 @@ transform:scale(1.08);
 }
 
 .tagline{
-margin-top:10px;
+margin-top:12px;
 font-size:18px;
 opacity:0.9;
 }
 
-.loading{
-margin-top:20px;
-font-size:15px;
-opacity:0.8;
+/* LOGIN */
+
+.loginpage{
+height:100vh;
+display:none;
+justify-content:center;
+align-items:center;
+padding:25px;
+background:#fffaf5;
 }
 
-/* HEADER */
-
-.hero{
-background:linear-gradient(135deg,#ff6b00,#ff9f43);
-padding:45px 25px 70px;
-border-bottom-left-radius:35px;
-border-bottom-right-radius:35px;
-color:white;
-position:relative;
-}
-
-.hero h1{
-font-size:42px;
-line-height:1.2;
-font-weight:700;
-}
-
-.hero p{
-margin-top:15px;
-font-size:16px;
-opacity:0.95;
-line-height:1.5;
-}
-
-.loginbtn{
-margin-top:25px;
+.loginbox{
 background:white;
-color:#ff6b00;
-padding:16px 22px;
-border:none;
-border-radius:18px;
-font-size:16px;
-font-weight:600;
+padding:35px;
+border-radius:32px;
+width:100%;
+max-width:430px;
+box-shadow:0 8px 25px rgba(0,0,0,0.08);
 }
 
-/* CONTAINER */
-
-.container{
-padding:20px;
-max-width:520px;
-margin:auto;
+.loginbox h1{
+font-size:34px;
+margin-bottom:10px;
 }
 
-/* CARD */
-
-.card{
-background:white;
-padding:24px;
-border-radius:28px;
-margin-top:-40px;
-box-shadow:0 6px 25px rgba(0,0,0,0.08);
-position:relative;
-z-index:10;
-}
-
-.card h2{
-font-size:28px;
-margin-bottom:8px;
-}
-
-.card p{
-color:#666;
-margin-bottom:20px;
+.loginbox p{
+color:gray;
+margin-bottom:25px;
 }
 
 input{
 width:100%;
 padding:18px;
-border-radius:16px;
-border:1px solid #ffe1cc;
+border-radius:18px;
+border:none;
+background:#fff5ef;
 font-size:16px;
 outline:none;
-background:#fff8f3;
 }
 
 button{
@@ -158,37 +107,74 @@ border:none;
 border-radius:18px;
 background:linear-gradient(135deg,#ff6b00,#ff9f43);
 color:white;
-font-size:17px;
+font-size:16px;
 font-weight:600;
 margin-top:18px;
+}
+
+/* TOPBAR */
+
+.topbar{
+background:linear-gradient(135deg,#ff6b00,#ff9f43);
+padding:25px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+color:white;
+border-bottom-left-radius:30px;
+border-bottom-right-radius:30px;
+}
+
+.topbar h2{
+font-size:32px;
+}
+
+.topbar p{
+opacity:0.9;
+margin-top:5px;
+}
+
+.profileicon{
+width:52px;
+height:52px;
+background:white;
+color:#ff6b00;
+display:flex;
+justify-content:center;
+align-items:center;
+border-radius:50%;
+font-size:24px;
+font-weight:bold;
+}
+
+/* CONTAINER */
+
+.container{
+padding:22px;
+max-width:550px;
+margin:auto;
 }
 
 /* SERVICES */
 
 .sectiontitle{
-margin-top:35px;
-font-size:28px;
-font-weight:700;
-}
-
-.sectionsub{
-color:#666;
-margin-top:8px;
+font-size:30px;
+margin-top:20px;
+margin-bottom:20px;
 }
 
 .services{
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:18px;
-margin-top:25px;
 }
 
 .service{
 background:white;
-padding:24px 15px;
-border-radius:24px;
+padding:28px 18px;
+border-radius:28px;
 text-align:center;
-box-shadow:0 5px 18px rgba(0,0,0,0.07);
+box-shadow:0 5px 20px rgba(0,0,0,0.07);
 transition:0.3s;
 }
 
@@ -197,13 +183,13 @@ transform:translateY(-5px);
 }
 
 .service span{
-font-size:42px;
+font-size:44px;
 display:block;
-margin-bottom:12px;
+margin-bottom:14px;
 }
 
 .service h3{
-font-size:18px;
+font-size:20px;
 }
 
 .service p{
@@ -212,38 +198,23 @@ font-size:13px;
 color:gray;
 }
 
-/* OFFER */
-
-.offer{
-margin-top:28px;
-background:linear-gradient(135deg,#2c1405,#ff6b00);
-padding:25px;
-border-radius:26px;
-color:white;
-}
-
-.offer h2{
-font-size:28px;
-}
-
-.offer p{
-margin-top:10px;
-opacity:0.9;
-}
-
 /* BOOKING */
 
 .booking{
 display:none;
 background:white;
-padding:24px;
-border-radius:28px;
-margin-top:30px;
-box-shadow:0 6px 25px rgba(0,0,0,0.08);
+padding:25px;
+border-radius:30px;
+margin-top:35px;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.booking h2{
+font-size:30px;
 }
 
 .price{
-font-size:52px;
+font-size:56px;
 font-weight:700;
 margin-top:15px;
 color:#ff6b00;
@@ -251,73 +222,103 @@ color:#ff6b00;
 
 .status{
 margin-top:18px;
+padding:15px;
 background:#ecfff3;
-padding:16px;
-border-radius:16px;
+border-radius:18px;
 color:#0a8a45;
 font-weight:600;
 text-align:center;
 }
 
 .worker{
-margin-top:20px;
+margin-top:22px;
 display:flex;
 align-items:center;
 gap:15px;
-padding:18px;
 background:#fff8f3;
-border-radius:20px;
+padding:18px;
+border-radius:22px;
 }
 
 .worker img{
-width:65px;
-height:65px;
+width:68px;
+height:68px;
 border-radius:50%;
 }
 
 .worker h3{
-font-size:18px;
+font-size:20px;
 }
 
 .worker p{
 font-size:14px;
 color:gray;
-margin-top:4px;
-}
-
-/* SUPPORT */
-
-.supportbtn{
-background:white;
-color:#ff6b00;
-border:2px solid #ff6b00;
+margin-top:5px;
 }
 
 /* RATING */
 
 .ratingpage{
 display:none;
-margin-top:30px;
 background:white;
-padding:24px;
-border-radius:28px;
-box-shadow:0 6px 25px rgba(0,0,0,0.08);
+padding:25px;
+border-radius:30px;
+margin-top:35px;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+text-align:center;
+}
+
+.ratingpage h2{
+font-size:30px;
 }
 
 .stars{
 font-size:42px;
-text-align:center;
-margin-top:18px;
+margin-top:20px;
+}
+
+/* PROFILE */
+
+.profilepanel{
+position:fixed;
+top:0;
+right:-100%;
+width:310px;
+height:100vh;
+background:white;
+z-index:999;
+padding:30px;
+transition:0.4s;
+box-shadow:-5px 0 20px rgba(0,0,0,0.08);
+}
+
+.profilepanel h2{
+font-size:32px;
+}
+
+.profilecard{
+margin-top:25px;
+background:#fff8f3;
+padding:22px;
+border-radius:22px;
+}
+
+.profilecard h3{
+font-size:24px;
+}
+
+.profilecard p{
+margin-top:8px;
+color:gray;
 }
 
 /* FOOTER */
 
 .footer{
-margin-top:40px;
-padding:30px 20px 100px;
+padding:40px 20px 110px;
 text-align:center;
-color:gray;
 font-size:14px;
+color:gray;
 }
 
 /* NAV */
@@ -330,7 +331,7 @@ width:100%;
 background:white;
 display:flex;
 justify-content:space-around;
-padding:15px;
+padding:16px;
 box-shadow:0 -3px 15px rgba(0,0,0,0.08);
 }
 
@@ -355,126 +356,116 @@ VEYRO
 </div>
 
 <div class="tagline">
-Fast Home Services
-</div>
-
-<div class="loading">
-Connecting nearby professionals...
+Fast Local Home Services
 </div>
 
 </div>
-
-<!-- HERO -->
-
-<div class="hero">
-
-<h1>
-Book Trusted Local Experts
-</h1>
-
-<p>
-Fast, reliable and affordable home services at your doorstep.
-</p>
-
-<button class="loginbtn"
-onclick="openLogin()">
-Login with OTP
-</button>
-
-</div>
-
-<div class="container">
 
 <!-- LOGIN -->
 
-<div class="card" id="loginCard">
+<div class="loginpage" id="loginPage">
 
-<h2>
+<div class="loginbox">
+
+<h1>
 Welcome to VEYRO
-</h2>
+</h1>
 
 <p>
-Secure mobile number login
+Login with your mobile number
 </p>
 
 <input
 type="tel"
-maxlength="10"
-placeholder="Enter Mobile Number">
+placeholder="Enter Mobile Number"
+id="mobileInput">
 
-<button onclick="login()">
-Continue
+<button onclick="loginUser()">
+Continue with OTP
 </button>
 
 </div>
 
-<!-- OFFER -->
+</div>
 
-<div class="offer">
+<!-- MAIN APP -->
+
+<div id="mainApp" style="display:none;">
+
+<!-- TOPBAR -->
+
+<div class="topbar">
+
+<div>
 
 <h2>
-20% OFF First Booking
+VEYRO
 </h2>
 
 <p>
-Trusted professionals in your area.
+Trusted nearby experts
 </p>
 
 </div>
 
-<!-- SERVICES -->
+<div class="profileicon"
+onclick="openProfile()">
+👤
+</div>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="container">
 
 <h2 class="sectiontitle">
-Popular Services
+Choose Service
 </h2>
-
-<p class="sectionsub">
-Choose what you need today
-</p>
 
 <div class="services">
 
 <div class="service"
-onclick="bookService('Plumber')">
-
-<span>🧑‍🔧</span>
-
-<h3>Plumber</h3>
-
-<p>Arrives in 20 mins</p>
-
-</div>
-
-<div class="service"
-onclick="bookService('Electrician')">
-
-<span>⚡</span>
-
-<h3>Electrician</h3>
-
-<p>Quick repairs</p>
-
-</div>
-
-<div class="service"
-onclick="bookService('Cleaning')">
+onclick="bookService('Cleaning','299')">
 
 <span>🧹</span>
 
 <h3>Cleaning</h3>
 
-<p>Deep cleaning</p>
+<p>Starting ₹299</p>
 
 </div>
 
 <div class="service"
-onclick="bookService('Painter')">
+onclick="bookService('Electrician','399')">
+
+<span>⚡</span>
+
+<h3>Electrician</h3>
+
+<p>Starting ₹399</p>
+
+</div>
+
+<div class="service"
+onclick="bookService('Plumber','349')">
+
+<span>🧑‍🔧</span>
+
+<h3>Plumber</h3>
+
+<p>Starting ₹349</p>
+
+</div>
+
+<div class="service"
+onclick="bookService('Painter','699')">
 
 <span>🎨</span>
 
 <h3>Painter</h3>
 
-<p>Professional painting</p>
+<p>Starting ₹699</p>
 
 </div>
 
@@ -485,16 +476,17 @@ onclick="bookService('Painter')">
 <div class="booking"
 id="bookingPage">
 
-<h2 id="servicename">
-Plumber
+<h2 id="serviceName">
+Cleaning
 </h2>
 
-<div class="price">
+<div class="price"
+id="servicePrice">
 ₹299
 </div>
 
-<p>
-Worker arriving in 18 mins
+<p style="margin-top:10px;">
+Professional arriving in 20 mins
 </p>
 
 <div class="status">
@@ -508,7 +500,7 @@ Worker arriving in 18 mins
 <div>
 
 <h3>
-Ramesh Kumar
+Rahul Sharma
 </h3>
 
 <p>
@@ -518,11 +510,6 @@ Ramesh Kumar
 </div>
 
 </div>
-
-<button
-class="supportbtn">
-Need Help?
-</button>
 
 <button onclick="completeWork()">
 Work Completed
@@ -555,12 +542,39 @@ Submit Review
 
 </div>
 
+<!-- PROFILE -->
+
+<div class="profilepanel"
+id="profilePanel">
+
+<h2>
+My Profile
+</h2>
+
+<div class="profilecard">
+
+<h3 id="customerName">
+VEYRO Customer
+</h3>
+
+<p id="customerMobile">
++91 0000000000
+</p>
+
+</div>
+
+<button onclick="logoutUser()">
+Logout
+</button>
+
+</div>
+
 <!-- FOOTER -->
 
 <div class="footer">
 
 © 2025 VEYRO <br>
-Fast Local Home Services
+Fast Trusted Home Services
 
 </div>
 
@@ -588,35 +602,62 @@ Fast Local Home Services
 
 <script>
 
-function openLogin(){
+setTimeout(() => {
 
-window.scrollTo({
-top:250,
-behavior:'smooth'
-});
+document.getElementById(
+"splash"
+).style.display="none";
+
+document.getElementById(
+"loginPage"
+).style.display="flex";
+
+},2500);
+
+function loginUser(){
+
+let mobile=document.getElementById(
+"mobileInput"
+).value;
+
+if(mobile.length<10){
+
+alert("Enter valid mobile number");
+
+return;
 
 }
 
-function login(){
+document.getElementById(
+"loginPage"
+).style.display="none";
 
-alert(
-"OTP Login Successful"
-);
+document.getElementById(
+"mainApp"
+).style.display="block";
+
+document.getElementById(
+"customerMobile"
+).innerHTML="+91 "+mobile;
 
 }
 
-function bookService(service){
+function bookService(name,price){
 
 document.getElementById(
 "bookingPage"
 ).style.display="block";
 
 document.getElementById(
-"servicename"
-).innerHTML=service;
+"serviceName"
+).innerHTML=name;
+
+document.getElementById(
+"servicePrice"
+).innerHTML="₹"+price;
 
 window.scrollTo({
-top:1200,
+top:800,
 behavior:'smooth'
 });
 
@@ -629,7 +670,7 @@ document.getElementById(
 ).style.display="block";
 
 window.scrollTo({
-top:1700,
+top:1500,
 behavior:'smooth'
 });
 
@@ -640,6 +681,30 @@ function cancelBooking(){
 document.getElementById(
 "bookingPage"
 ).style.display="none";
+
+}
+
+function openProfile(){
+
+let panel=document.getElementById(
+"profilePanel"
+);
+
+if(panel.style.right=="0px"){
+
+panel.style.right="-100%";
+
+}else{
+
+panel.style.right="0";
+
+}
+
+}
+
+function logoutUser(){
+
+location.reload();
 
 }
 
